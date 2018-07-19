@@ -4,7 +4,7 @@ import HowItWorks from './../components/HowItWorks'
 class HowItWorksPage extends Component {
   render(){
     return(
-      <div>
+      <div className="pageContainer">
       <HowItWorks/>
       </div>
     )

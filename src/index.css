@@ -1,6 +1,6 @@
 .imgStyle{
   height:auto;
-  width:600px;
+  width:100%;
   padding-top:40px;
   padding-bottom:40px;
 }
@@ -10,17 +10,19 @@
 }
 
 .widthStyle{
-  max-width:80%;
-
-padding:210px;
-
-
-
+  max-width:500px;
+  padding-top: 100px;
+  height: 100vh
 }
 
 .addImage{
   background-image: linear-gradient(LightSkyBlue, yellow);
 }
-*{
-  text-align:center;
+.pageContainer {
+  padding-top: 80px;
+  padding-bottom: 60px
+}
+.how-it-works-icon {
+  height: 80px;
+  width: 80px
 }

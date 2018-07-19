@@ -3,7 +3,7 @@ import Login from '../components/Login'
 class LoginPage extends Component {
   render(){
     return(
-      <div >
+      <div className="pageContainer">
       <Login/>
       </div>
     )

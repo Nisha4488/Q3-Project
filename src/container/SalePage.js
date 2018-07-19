@@ -15,7 +15,7 @@ async componentDidMount(){
 }
 render() {
     return (
-      <div className="App">
+      <div className="App pageContainer">
         <SaleDetails sale={this.state.sale} />
      </div>
     );

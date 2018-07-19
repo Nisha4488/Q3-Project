@@ -6,13 +6,17 @@ import axios from 'axios'
 
 class SaleListPage extends Component {
   state = {
-    sales: [],
+     sales: [],
     filterPhrase:'',
     sortBy:''
 
   }
   updateFilterPhrase=(str)=>{
     this.setState({filterPhrase: str})
+  }
+
+  sortSalesBy=(sortBy)=>{
+    this.setState({sortBy})
   }
   addToCart =(id)=>{
     let updatedSaleList= this.state.sales.map(sale=>{
@@ -29,23 +33,21 @@ class SaleListPage extends Component {
     .then(response=> this.setState({sales:response.data}))
   }
   render() {
-
-    let mainSaleList=this.state.sales.filter(sale=>sale.name.toLowerCase().includes(this.state.filterPhrase.toLowerCase()))
-    .sort((a,b)=>{
-      if(this.state.sortBy === 'Regular Price') {
+    const filteredSales=this.state.sales.filter(sale=>sale.name.toLowerCase().includes(this.state.filterPhrase.toLowerCase()));
+    const sortedSales = filteredSales.sort((a,b)=>{
+      if(this.state.sortBy === 'regular_price') {
         return a.regular_price - b.regular_price;
       }
-      if(this.state.sortBy === 'Discounted Price') {
+      if(this.state.sortBy === 'discounted_price') {
         return a.discounted_price - b.discounted_price;
       }
-      return 0;
+      return a.name > b.name;;
   })
     return (
-      <div>
-      <SearchBar updateFilterPhraseFunc={this.updateFilterPhrase}/>
-      <SaleList sales={mainSaleList} addToCartFunc={this.addToCart}/>
+      <div className="pageContainer">
+      <SearchBar updateFilterPhraseFunc={this.updateFilterPhrase} sortSalesBy={this.sortSalesBy} />
+      <SaleList sales={sortedSales} addToCartFunc={this.addToCart}/>
       </div>
-
     );
   }
 }

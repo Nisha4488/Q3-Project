@@ -5,7 +5,7 @@ class NewSalePage extends React.Component{
 
   render(){
   return(
-    <div>
+    <div className="pageContainer">
     <NewSale />
     </div>
   )
