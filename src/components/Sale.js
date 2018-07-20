@@ -11,10 +11,13 @@ import {
   Col,
   } from 'reactstrap';
   import { Link } from 'react-router-dom'
+  import {If} from 'react-if';
+  import { connect } from 'react-redux'
   import SaleCountDown from './SaleCountDown'
   import {getDiscountedPrice} from '../utils'
 
 const Sale = (props) => {
+  const user = props.user || {};
 return (
   <div >
     <Card className="my-5 ml-auto mr-auto ">
@@ -43,9 +46,11 @@ return (
           <Col ><Button className="btn btn-info buttonStyle mb-1"><Link className="text-white" to={`/sales/${props.sale.id}`}>View</Link></Button></Col>
           <Col ><Button className="btn btn-info buttonStyle"><Link className="text-white" to={`/buy/${props.sale.id}`}>Buy</Link></Button></Col>
           </Row>
-          <Row>
-            <Col className="text-center mt-3"><Button className="btn btn-seconday buttonStyle mb-1"><Link className="text-white" to={`/sales/${props.sale.id}/edit`}>Edit</Link></Button></Col>
+          <If condition={user.admin}>
+            <Row>
+              <Col className="text-center mt-3"><Button className="btn btn-seconday buttonStyle mb-1"><Link className="text-white" to={`/sales/${props.sale.id}/edit`}>Edit</Link></Button></Col>
             </Row>
+            </If>
         </Container>
         </CardBody>
     </Card>
@@ -53,4 +58,19 @@ return (
   );
 };
 
-export default Sale;
+const mapStateToProps = (state) => {
+  return {
+    user: state.users.sso
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+}
+
+const SaleComp = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sale)
+
+export default SaleComp;

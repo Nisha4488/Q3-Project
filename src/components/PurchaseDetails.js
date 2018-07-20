@@ -11,6 +11,7 @@ return(
     <Row>
       <Col xs ="12"><img src= {props.sale.img_url} className="imgStyle" /></Col>
     </Row>
+    <div className="borderStyle m-2 p-3">
     <Row>
       <Col xs ="6" className="font-weight-bold">Name:</Col>
       <Col  xs="6">{props.sale.name}</Col>
@@ -57,6 +58,7 @@ return(
       <Col xs ="6" className="font-weight-bold">Your extra discount after you made purchase :</Col>
       <Col  xs="6">$0</Col>
     </Row>
+    </div>
    </div>
   </div>
  )

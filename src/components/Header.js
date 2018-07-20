@@ -8,8 +8,12 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import { connect } from 'react-redux'
+import {If} from 'react-if';
+import isEmpty from 'lodash/isEmpty';
+import { Link } from 'react-router-dom'
 
-export default class Example extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -24,6 +28,8 @@ export default class Example extends React.Component {
     });
   }
   render() {
+    const user = this.props.user || {};
+    console.log('this.props.user ', this.props.user)
     return (
       <div>
         <Navbar color="info" light expand="md" className="fixed-top">
@@ -31,20 +37,20 @@ export default class Example extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink><h4><Link className="text-white" to={`/newsale`}>Create Sale</Link></h4></NavLink>
+                </NavItem>
               <NavItem>
-                <NavLink href="/newsale"><h4>Create Sale</h4></NavLink>
+                <NavLink><h4><Link className="text-white" to={`/home`}>Home</Link></h4></NavLink>
+              </NavItem>
+                <NavItem>
+                  <NavLink><h4><Link className="text-white" to={`/login`}>Login</Link></h4></NavLink>
+                </NavItem>
+              <NavItem>
+                <NavLink><h4><Link className="text-white" to={`/register`}>Register</Link></h4></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/home"><h4>Home</h4></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/login"><h4>Login</h4></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/register"><h4>Register</h4></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/about"><h4>How it works</h4></NavLink>
+                <NavLink><h4><Link className="text-white" to={`/about`}>How it works</Link></h4></NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -53,3 +59,20 @@ export default class Example extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.users.sso
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+}
+
+const HeaderComp = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header)
+
+export default HeaderComp;

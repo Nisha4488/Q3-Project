@@ -11,6 +11,7 @@ return(
     <Row>
       <Col xs ="12"><img src= {props.sale.img_url} className="imgStyle" /></Col>
     </Row>
+    <div className ="borderStyle m-2 p-3">
     <Row>
       <Col xs ="6" className="font-weight-bold">Name:</Col>
       <Col  xs="6">{props.sale.name}</Col>
@@ -35,6 +36,7 @@ return(
       <Col  xs ="6" className="font-weight-bold">Sale Ends:</Col>
       <Col  xs ="6"><SaleCountDown timestamp={props.sale.end_at}/></Col>
     </Row>
+    </div>
    </div>
   </div>
  )

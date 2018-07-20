@@ -4,6 +4,7 @@ import axios from 'axios'
 import {index} from '../index.css'
 import {getDiscountedPrice} from '../utils'
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux'
 
 class SaleDetails extends React.Component{
 state={
@@ -30,7 +31,7 @@ const baseCost = (unitPrice + shippingCharge)*this.state.quantity;
 const taxAmount = (tax * baseCost).toFixed(2);
 const totalAmount = parseFloat(baseCost) + parseFloat(taxAmount);
 const payload = {
-  user_id:1,
+  user_id: this.props.user.id,
   sale_id:this.props.sale.id,
   unit_price: unitPrice,
   shipping_charge: shippingCharge,
@@ -43,11 +44,12 @@ if(this.state.redirection) {
   return <Redirect to={`/purchases/${this.state.purchaseId}`} />;
 }
 return(
- <div className="addImage">
+ <div className="addImage ">
   <div className="mr-auto ml-auto w-50">
     <Row>
       <Col xs ="12"><img src= {this.props.sale.img_url} className="imgStyle" /></Col>
     </Row>
+    <div className ="borderStyle m-2 p-3">
     <Row>
       <Col xs ="6" className="font-weight-bold">Name:</Col>
       <Col  xs="6">{this.props.sale.name}</Col>
@@ -89,9 +91,26 @@ return(
       <Button color="primary" className ="buttonWidth w-50 mt-2" onClick={()=> this.buySale(payload)}>Buy</Button>
       </Col>
     </Row>
+    </div>
    </div>
   </div>
  )
 }
 }
-export default SaleDetails
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.users.sso
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+}
+
+const SaleDetailsComp = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SaleDetails)
+
+export default SaleDetailsComp;

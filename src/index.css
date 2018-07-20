@@ -26,3 +26,16 @@
   height: 80px;
   width: 80px
 }
+
+.borderStyle{
+  border-style: solid;
+   border-right-width: 15px;
+   border-bottom-width: 15px;
+}
+
+.borderForm{
+  border-style: solid;
+   border-right-width: 10px;
+   border-bottom-width: 10px;
+   border-radius:2px;
+}
