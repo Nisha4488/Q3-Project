@@ -21,7 +21,7 @@ const Sale = (props) => {
 return (
   <div >
     <Card className="my-5 ml-auto mr-auto ">
-      <CardImg top width="100%" img src={props.sale.img_url} alt="Card image cap" />
+      <CardImg top width="100%" className="imgStyle" img src={props.sale.img_url} alt="Card image cap" />
       <CardBody>
         <CardTitle className="text-center mb-4">{props.sale.name}</CardTitle>
         <Container >
