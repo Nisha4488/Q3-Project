@@ -7,6 +7,6 @@ export const getDiscountedPrice =(regular_price, units_sold)=>{
   }
   if(units_sold<=30){
   return regular_price*0.85
-}
+ }
 return regular_price*0.80
-}
+ }

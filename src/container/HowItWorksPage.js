@@ -5,11 +5,10 @@ class HowItWorksPage extends Component {
   render(){
     return(
       <div className="pageContainer">
-      <HowItWorks/>
+        <HowItWorks/>
       </div>
     )
   }
-
 }
 
 export default HowItWorksPage;

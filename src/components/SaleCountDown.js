@@ -16,7 +16,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 const SaleCountDown =(props)=>{
   return(
     <div className="text-danger">
-    <Countdown date={new Date(props.timestamp).getTime()}  renderer={renderer} />
+      <Countdown date={new Date(props.timestamp).getTime()}  renderer={renderer} />
     </div>
   )
 }

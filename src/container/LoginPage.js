@@ -4,11 +4,10 @@ class LoginPage extends Component {
   render(){
     return(
       <div className="pageContainer">
-      <Login/>
+        <Login/>
       </div>
     )
   }
-
 }
 
 export default LoginPage;

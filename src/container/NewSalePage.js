@@ -6,9 +6,9 @@ class NewSalePage extends React.Component{
   render(){
   return(
     <div className="pageContainer">
-    <NewSale />
+      <NewSale />
     </div>
-  )
-}
+   )
+ }
 }
 export default NewSalePage

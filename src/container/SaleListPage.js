@@ -45,8 +45,8 @@ class SaleListPage extends Component {
   })
     return (
       <div className="pageContainer">
-      <SearchBar updateFilterPhraseFunc={this.updateFilterPhrase} sortSalesBy={this.sortSalesBy} />
-      <SaleList sales={sortedSales} addToCartFunc={this.addToCart}/>
+        <SearchBar updateFilterPhraseFunc={this.updateFilterPhrase} sortSalesBy={this.sortSalesBy} />
+        <SaleList sales={sortedSales} addToCartFunc={this.addToCart}/>
       </div>
     );
   }

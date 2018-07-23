@@ -21,7 +21,7 @@ class ProtectedRoute extends React.Component {
     const response = await axios.get('http://localhost:8000/users/check-session', params);
     const user = response.data;
     if(!user.error) {
-      this.props.updateSsoData(user);  
+      this.props.updateSsoData(user);
     }
     this.setState({loading: false, user})
   }

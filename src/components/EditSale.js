@@ -35,30 +35,30 @@ return(
       <p><h3 className="text-center">Update Sale</h3></p>
         <form onSubmit={this.handleSubmit}>
         <Row>
-          <Col xs ="2"><label className="font-weight-bold"> Name:</label></Col>
-          <Col xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,name:e.target.value}})} value={this.state.sale.name} placeholder="Name" className="w-75 p-2 m-2 "/></Col>
+            <Col xs ="2"><label className="font-weight-bold"> Name:</label></Col>
+            <Col xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,name:e.target.value}})} value={this.state.sale.name} placeholder="Name" className="w-75 p-2 m-2 "/></Col>
           </Row>
           <Row>
-          <Col xs ="2"><label className="font-weight-bold"> Img Url:</label></Col>
-          <Col xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,img_url:e.target.value}})} value={this.state.sale.img_url} placeholder="Img Url" className="w-75 p-2  m-2"/></Col>
+            <Col xs ="2"><label className="font-weight-bold"> Img Url:</label></Col>
+            <Col xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,img_url:e.target.value}})} value={this.state.sale.img_url} placeholder="Img Url" className="w-75 p-2  m-2"/></Col>
           </Row>
           <Row>
-          <Col xs ="2"><label className="font-weight-bold"> Regular Price:</label></Col>
-          <Col  xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,regular_price:e.target.value}})} value={this.state.sale.regular_price} placeholder="Regular Price"className="w-75 p-2 m-2 "/></Col>
+            <Col xs ="2"><label className="font-weight-bold"> Regular Price:</label></Col>
+            <Col  xs ="8"><input type="text" onChange={e=>this.setState({sale: {...this.state.sale,regular_price:e.target.value}})} value={this.state.sale.regular_price} placeholder="Regular Price"className="w-75 p-2 m-2 "/></Col>
           </Row>
           <Row>
-          <Col xs ="2"><label className="font-weight-bold"> Description:</label></Col>
-          <Col xs ="8"><textarea name="description" placeholder="Description" onChange={e=>this.setState({sale: {...this.state.sale,description:e.target.value}})} value={this.state.sale.description} className="w-75 p-2 m-2"></textarea></Col>
+            <Col xs ="2"><label className="font-weight-bold"> Description:</label></Col>
+            <Col xs ="8"><textarea name="description" placeholder="Description" onChange={e=>this.setState({sale: {...this.state.sale,description:e.target.value}})} value={this.state.sale.description} className="w-75 p-2 m-2"></textarea></Col>
           </Row>
           <Row>
-          <Col xs ="2"><label className="font-weight-bold"> End At:</label> </Col>
-          <Col xs ="8">  <DatePicker
+            <Col xs ="2"><label className="font-weight-bold"> End At:</label> </Col>
+            <Col xs ="8">  <DatePicker
                 className="w-75 p-2 m-2"
                 selected={this.state.sale.end_at}
                 onChange={date=>this.setState({sale: {...this.state.sale,end_at:date}})}
-                timeCaption="time"
-            /></Col>
-            </Row>
+                timeCaption="time"/>
+            </Col>
+          </Row>
          <button type="submit" className="btn btn-primary">Submit</button>
        </form>
      </div>

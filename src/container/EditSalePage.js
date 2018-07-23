@@ -14,7 +14,7 @@ class EditSalePage extends React.Component{
   }
   return(
     <div className="pageContainer">
-    <EditSale sale={this.state.sale}/>
+      <EditSale sale={this.state.sale}/>
     </div>
   )
 }

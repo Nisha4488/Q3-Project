@@ -94,8 +94,8 @@ return(
     </div>
    </div>
   </div>
- )
-}
+  )
+ }
 }
 
 const mapStateToProps = (state) => {

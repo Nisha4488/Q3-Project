@@ -9,7 +9,7 @@ class HowItWorks extends Component {
       <Row >
         <Col xs="12" sm="3" className="text-center ">
           <div>Step 1</div>
-          <img src="/buy-sale.png" className="m-1 how-it-works-icon" />
+           <img src="/buy-sale.png" className="m-1 how-it-works-icon" />
           <div>Pay 100% and place your order as per current price.</div>
         </Col>
         <Col xs="12" sm="3" className="text-center">
